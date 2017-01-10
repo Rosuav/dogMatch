@@ -13,7 +13,7 @@ const serverRender = () =>
 				initialMarkup: ReactDOMServer.renderToString(
 					<App initialQuiz={res.data.quiz} />
 				),
-				initalData: res.data
+				initialData: res.data
 			}
 		});
 
