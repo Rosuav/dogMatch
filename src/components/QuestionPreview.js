@@ -2,11 +2,11 @@ import React from 'react';
 
 const QuestionPreview = (quiz) => (
 	<div className="QuestionPreview">
-		<div>
+		<div className="questions">
 			{quiz.questions}
 		</div>
-		<div>
-			{quiz.options}
+		<div className="answers">
+			{quiz.answers}
 		</div>
 	</div>
 );

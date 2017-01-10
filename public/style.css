@@ -1,0 +1,10 @@
+.QuestionPreview {
+  margin: 1em;
+  border: 1px solid #ccc; }
+  .QuestionPreview .questions {
+    border-bottom: 1px solid #ccc;
+    padding: 0.25em 0.5em;
+    font-weight: bold;
+    background-color: #eee; }
+  .QuestionPreview .answers {
+    padding: 0.5em; }

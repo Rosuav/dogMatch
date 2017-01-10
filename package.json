@@ -18,10 +18,14 @@
   },
   "homepage": "https://github.com/oshirodk/dogMatch#readme",
   "dependencies": {
+    "axios": "^0.15.3",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "json-loader": "^0.5.4",
+    "middleware": "^1.0.0",
     "mongodb": "^2.2.19",
+    "node-sass": "^4.2.0",
+    "node-sass-middleware": "^0.10.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
