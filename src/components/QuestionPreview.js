@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Questions = ({}) => (
-	<div className="questions">
+const QuestionPreview = (quiz) => (
+	<div className="QuestionPreview">
 		<div>
 			{quiz.questions}
 		</div>
@@ -11,4 +11,4 @@ const Questions = ({}) => (
 	</div>
 );
 
-export default Questions;
+export default QuestionPreview;

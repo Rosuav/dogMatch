@@ -1,6 +1,7 @@
+
 import React from 'react';
 import Header from './Header';
-import Questions from './Questions';
+import QuestionPreview from './QuestionPreview';
 
 
 class App extends React.Component {
@@ -14,9 +15,9 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<Header message={this.state.pageHeader}/>
+				<Header message={this.state.pageHeader} />
 				<div>
-					<Questions {...this.props.quiz[0]}/>
+					<QuestionPreview {this.props.quiz[0]} />
 				</div>
 			</div>
 		);
@@ -24,3 +25,4 @@ class App extends React.Component {
 };
 
 export default App;
+
