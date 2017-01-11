@@ -21553,9 +21553,13 @@
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _QuestionPreview = __webpack_require__(181);
+	var _QuestionPreview = __webpack_require__(180);
 
 	var _QuestionPreview2 = _interopRequireDefault(_QuestionPreview);
+
+	var _Answers = __webpack_require__(181);
+
+	var _Answers2 = _interopRequireDefault(_Answers);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21658,11 +21662,49 @@
 	exports.default = Header;
 
 /***/ },
-/* 180 */,
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Answers = __webpack_require__(181);
+
+	var _Answers2 = _interopRequireDefault(_Answers);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var QuestionPreview = function QuestionPreview(quiz) {
+		return _react2.default.createElement(
+			'div',
+			{ className: 'QuestionPreview' },
+			_react2.default.createElement(
+				'div',
+				{ className: 'questions' },
+				quiz.questions
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'answers' },
+				_react2.default.createElement(_Answers2.default, null)
+			)
+		);
+	};
+
+	exports.default = QuestionPreview;
+
+/***/ },
 /* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -21674,24 +21716,62 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var QuestionPreview = function QuestionPreview(quiz) {
-		return _react2.default.createElement(
-			"div",
-			{ className: "QuestionPreview" },
-			_react2.default.createElement(
-				"div",
-				{ className: "questions" },
-				quiz.questions
-			),
-			_react2.default.createElement(
-				"div",
-				{ className: "answers" },
-				quiz.answers
-			)
-		);
-	};
+	var Answers = _react2.default.createClass({
+		displayName: 'Answers',
+		getInitialState: function getInitialState() {
+			return {
+				selectedOption: 'option1'
+			};
+		},
+		handleOptionChange: function handleOptionChange(changeEvent) {
+			this.setState({
+				selectedOption: changeEvent.target.value
+			});
+		},
+		render: function render() {
+			return _react2.default.createElement(
+				'form',
+				{ className: 'answers' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'radio' },
+					_react2.default.createElement(
+						'label',
+						null,
+						_react2.default.createElement('input', { type: 'radio', value: 'option1', checked: this.state.selectedOption === 'option1', onChange: this.handleOptionChange }),
+						'Option 1'
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'radio' },
+					_react2.default.createElement(
+						'label',
+						null,
+						_react2.default.createElement('input', { type: 'radio', value: 'option1', checked: this.state.selectedOption === 'option1', onChange: this.handleOptionChange }),
+						'Option 2'
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'radio' },
+					_react2.default.createElement(
+						'label',
+						null,
+						_react2.default.createElement('input', { type: 'radio', value: 'option1', checked: this.state.selectedOption === 'option1', onChange: this.handleOptionChange }),
+						'Option 3'
+					)
+				),
+				_react2.default.createElement(
+					'button',
+					{ className: 'btn btn-default', type: 'submit' },
+					'Results'
+				)
+			);
+		}
+	});
 
-	exports.default = QuestionPreview;
+	exports.default = Answers;
 
 /***/ }
 /******/ ]);

@@ -1,4 +1,5 @@
 import React from 'react';
+import Answers from './Answers';
 
 const QuestionPreview = (quiz) => (
 	<div className="QuestionPreview">
@@ -6,7 +7,7 @@ const QuestionPreview = (quiz) => (
 			{quiz.questions}
 		</div>
 		<div className="answers">
-			{quiz.answers}
+			<Answers />{/*quiz.answers*/}
 		</div>
 	</div>
 );

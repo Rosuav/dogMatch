@@ -2,13 +2,28 @@
 	"quiz": [
 		{
 			"id": 1,
-			"questions": "What is your living situation?",
-			"answers": ["apartment", "condo/townhome", "house", "one of these without yard", "one of these with a yard"]
+			"questions": "What size animal are you looking for?",
+			"answers": ["small", "medium", "large"]
 		},
 		{
 			"id": 2,
 			"questions": "How much time are you willing to put in for your new companion?",
 			"answers": ["0-1 hr a day", "2-5 hrs a day", "5+ hrs a day"]
+		},
+		{
+			"id": 3,
+			"questions": "Are you active?",
+			"answers": ["Very active", "Average", "Almost never"]
+		},
+		{
+			"id": 4,
+			"questions": "How do you feel about shedding?",
+			"answers": ["If there's no fur in my coffee, I don't want it", "Don't really care", "Minimal the better"]
+		},
+		{
+			"id": 5,
+			"questions": "Do you have other animals?",
+			"answers": ["Yes", "No", "Maybe someday"]
 		}
 	]
 }

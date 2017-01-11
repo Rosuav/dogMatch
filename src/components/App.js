@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import QuestionPreview from './QuestionPreview';
+import Answers from './Answers';
 
 
 class App extends React.Component {
