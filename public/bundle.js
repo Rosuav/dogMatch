@@ -54,7 +54,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _App = __webpack_require__(179);
+	var _App = __webpack_require__(178);
 
 	var _App2 = _interopRequireDefault(_App);
 
@@ -21532,8 +21532,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 178 */,
-/* 179 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21550,7 +21549,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Header = __webpack_require__(180);
+	var _Header = __webpack_require__(179);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
@@ -21618,7 +21617,7 @@
 	exports.default = App;
 
 /***/ },
-/* 180 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21659,6 +21658,7 @@
 	exports.default = Header;
 
 /***/ },
+/* 180 */,
 /* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
