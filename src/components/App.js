@@ -9,13 +9,7 @@ class App extends React.Component {
 		pageHeader: 'Find Your Dog Match',
 		quiz: this.props.initialQuiz
 	};
-	componentDidMount() {
-		
-
-		
-	};
-	componentWillUnmount() {
-	};
+	
 	render() {
 		return (
 			<div className="App">
@@ -25,6 +19,7 @@ class App extends React.Component {
 						<QuestionPreview key={quiz.id} {...quiz} />
 					)}
 				</div>
+				<button className="btn btn-default" type="submit">Results</button>
 			</div>
 		);
 	}

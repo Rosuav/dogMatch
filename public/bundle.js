@@ -21590,12 +21590,6 @@
 		}
 
 		_createClass(App, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {}
-		}, {
-			key: 'componentWillUnmount',
-			value: function componentWillUnmount() {}
-		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
@@ -21608,6 +21602,11 @@
 						this.state.quiz.map(function (quiz) {
 							return _react2.default.createElement(_QuestionPreview2.default, _extends({ key: quiz.id }, quiz));
 						})
+					),
+					_react2.default.createElement(
+						'button',
+						{ className: 'btn btn-default', type: 'submit' },
+						'Results'
 					)
 				);
 			}
@@ -21733,10 +21732,13 @@
 
 			console.log('You have selected : ', this.state.selectedOption);
 			var results = [];
-			var selected = this.state.selectionOption;
-			for (var i = 0; i > this.props.quiz.questions.length; i++) {
-				results.push(selected);
-			}
+			var selected = this.state.selectedOption;
+			results.push(selected);
+
+			// for (let i = 0; i > this.props.quiz.questions.length; i++) {
+			// 	console.log("pushing");
+			// 	results.push(selected);
+			// }
 			// option1: this.option1.value,
 			// option2: this.option2.value,
 			// option3: this.option3.value
@@ -21797,11 +21799,6 @@
 								onChange: this.handleOptionChange }),
 							this.props.quiz.answers[2]
 						)
-					),
-					_react2.default.createElement(
-						'button',
-						{ className: 'btn btn-default', type: 'submit' },
-						'Results'
 					)
 				)
 			);
