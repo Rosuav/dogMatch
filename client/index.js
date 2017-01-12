@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainComponent from './main-component';
-import store from './store';
-import {Provider} from 'react-redux';
+import App from './components/App';
 
-document.addEventListener('DOMContentLoaded', () =>
-	ReactDOM.render(<Provider store={store}>
-		<MainComponent />
-	</Provider>, document.getElementById('app'))
+
+ReactDOM.render(
+	<App initialQuiz={window.initialData.quiz} />,
+	document.getElementById('root')
 );
+
+
+
+

@@ -4,12 +4,18 @@ const express = require('express');
 
 const HOST = process.env.HOST;
 const PORT = process.env.PORT || 8080;
+const sassMiddleware = require('node-sass-middleware');
 
 const app = express();
 app.use(express.static("build"));
+app.use(sassMiddleware({
+        src: './client',
+        dest: './build',
+}));
 
-app.get("/hello", (req, res) => {
-	res.json({message: "Hello, world!"});
+const testData = require('./testData');
+app.get('/quiz', (req, res) => {
+	res.send({ quiz: testData.quiz })
 });
 
 function run_server() {
