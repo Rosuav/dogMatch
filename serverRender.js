@@ -16,5 +16,3 @@ const serverRender = () =>
 				initialData: res.data
 			}
 		});
-
-export default serverRender;

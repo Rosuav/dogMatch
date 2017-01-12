@@ -21551,7 +21551,7 @@
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Answers = __webpack_require__(181);
+	var _Answers = __webpack_require__(180);
 
 	var _Answers2 = _interopRequireDefault(_Answers);
 
@@ -21594,12 +21594,17 @@
 						'div',
 						null,
 						this.state.quiz.map(function (quiz) {
-							quiz.questions;
+							return _react2.default.createElement(
+								'div',
+								{ className: 'questions' },
+								'quiz.questions',
+								_react2.default.createElement(_Answers2.default, { quiz: quiz })
+							);
 						})
 					),
 					_react2.default.createElement(
 						'button',
-						{ className: 'btn btn-default', type: 'submit', onSubmit: this.handleFormSubmit },
+						{ className: 'btn btn-default', type: 'submit' },
 						'Results'
 					)
 				);
@@ -21612,11 +21617,6 @@
 	;
 
 	exports.default = App;
-
-	// <div className="answers">
-	// 					{/*<Answers quiz={quiz} />*/}
-
-	// 				</div>
 
 /***/ },
 /* 179 */
@@ -21660,8 +21660,7 @@
 	exports.default = Header;
 
 /***/ },
-/* 180 */,
-/* 181 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

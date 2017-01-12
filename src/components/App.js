@@ -15,7 +15,10 @@ class App extends React.Component {
 				<Header message={this.state.pageHeader} />
 				<div>
 					{this.state.quiz.map(quiz => 
-						{quiz.questions}
+						<div className="questions">
+							quiz.questions
+							<Answers quiz={quiz} />
+						</div>
 					)}
 				</div>
 				
@@ -29,7 +32,3 @@ class App extends React.Component {
 export default App;
 
 
-// <div className="answers">
-// 					{/*<Answers quiz={quiz} />*/}
-
-// 				</div>
