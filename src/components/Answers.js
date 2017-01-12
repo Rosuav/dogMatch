@@ -40,7 +40,7 @@ const Answers = React.createClass ({
 
 		return (
 			<div>
-				<form onSubmit={this.handleFormSubmit}>
+				<form >
 					<div className="radio">
 						<label>
 							<input ref={(input) => this.option1 = input} type="radio" value="option1" 

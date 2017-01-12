@@ -9,11 +9,8 @@ const QuestionPreview = (quiz) => (
 			</div>
 			<div className="answers" >
 				<Answers quiz={quiz} />
-				
+
 			</div>
 		</div>
 	);
 
-
-
-export default QuestionPreview;
