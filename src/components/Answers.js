@@ -17,17 +17,21 @@ const Answers = React.createClass ({
 		formSubmitEvent.preventDefault();
 
 		console.log('You have selected : ', this.state.selectedOption)
-		const results = {
-			option1: this.option1.value,
-			option2: this.option2.value,
-			option3: this.option3.value
+		const results = [];
+		const selected = this.state.selectionOption
+		for (let i = 0; i > this.props.quiz.questions.length; i++) {
+			results.push(selected);
 		}
+			// option1: this.option1.value,
+			// option2: this.option2.value,
+			// option3: this.option3.value
+		
 		console.log(results, "RESULTS");
 		
 	},
 
 	render() {
-		for (var i = 0; i > this.props.quiz.answers.length; i++) {
+		for (let i = 0; i > this.props.quiz.answers.length; i++) {
 			console.log(this.props.quiz.answers[i], "DA ANSWERS");
 		}
 
@@ -58,9 +62,9 @@ const Answers = React.createClass ({
 							{this.props.quiz.answers[2]}
 						</label>
 					</div>
-					
+					<button className="btn btn-default" type="submit">Results</button>
 				</form>
-				<button className="btn btn-default" type="submit">Results</button>
+				
 			</div>
 		)
 	}

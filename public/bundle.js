@@ -21732,11 +21732,15 @@
 			formSubmitEvent.preventDefault();
 
 			console.log('You have selected : ', this.state.selectedOption);
-			var results = {
-				option1: this.option1.value,
-				option2: this.option2.value,
-				option3: this.option3.value
-			};
+			var results = [];
+			var selected = this.state.selectionOption;
+			for (var i = 0; i > this.props.quiz.questions.length; i++) {
+				results.push(selected);
+			}
+			// option1: this.option1.value,
+			// option2: this.option2.value,
+			// option3: this.option3.value
+
 			console.log(results, "RESULTS");
 		},
 		render: function render() {
@@ -21793,12 +21797,12 @@
 								onChange: this.handleOptionChange }),
 							this.props.quiz.answers[2]
 						)
+					),
+					_react2.default.createElement(
+						'button',
+						{ className: 'btn btn-default', type: 'submit' },
+						'Results'
 					)
-				),
-				_react2.default.createElement(
-					'button',
-					{ className: 'btn btn-default', type: 'submit' },
-					'Results'
 				)
 			);
 		}
