@@ -21671,8 +21671,6 @@
 		value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -21683,65 +21681,22 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var QuestionPreview = function (_React$Component) {
-		_inherits(QuestionPreview, _React$Component);
-
-		function QuestionPreview(props) {
-			_classCallCheck(this, QuestionPreview);
-
-			var _this = _possibleConstructorReturn(this, (QuestionPreview.__proto__ || Object.getPrototypeOf(QuestionPreview)).call(this, props));
-
-			_this.handleFormSubmit.bind(_this);
-			return _this;
-		}
-
-		_createClass(QuestionPreview, [{
-			key: 'handleFormSubmit',
-			value: function handleFormSubmit(formSubmitEvent) {
-				formSubmitEvent.preventDefault();
-
-				console.log('You have selected : ', this.state.selectedOption);
-				var results = {
-					option1: this.question1.value,
-					option2: this.question2.value,
-					option3: this.question3.value
-				};
-				console.log(results);
-				console.log(this.props.quiz.questions, "QIZZ");
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					{ className: 'QuestionPreview' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'questions' },
-						quiz.questions
-					),
-					_react2.default.createElement(
-						'form',
-						{ className: 'answers', onSubmit: this.handleFormSubmit },
-						_react2.default.createElement(_Answers2.default, { quiz: this.props.quiz }),
-						_react2.default.createElement(
-							'button',
-							{ className: 'btn btn-default', type: 'submit' },
-							'Results'
-						)
-					)
-				);
-			}
-		}]);
-
-		return QuestionPreview;
-	}(_react2.default.Component);
+	var QuestionPreview = function QuestionPreview(quiz) {
+		return _react2.default.createElement(
+			'div',
+			{ className: 'QuestionPreview' },
+			_react2.default.createElement(
+				'div',
+				{ className: 'questions' },
+				quiz.questions
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'answers' },
+				_react2.default.createElement(_Answers2.default, { quiz: quiz })
+			)
+		);
+	};
 
 	exports.default = QuestionPreview;
 
@@ -21770,62 +21725,80 @@
 		},
 		handleOptionChange: function handleOptionChange(changeEvent) {
 			this.setState({
-				selectedOption: 'changeEvent.target.value'
+				selectedOption: changeEvent.target.value
 			});
+		},
+		handleFormSubmit: function handleFormSubmit(formSubmitEvent) {
+			formSubmitEvent.preventDefault();
+
+			console.log('You have selected : ', this.state.selectedOption);
+			var results = {
+				option1: this.option1.value,
+				option2: this.option2.value,
+				option3: this.option3.value
+			};
+			console.log(results, "RESULTS");
 		},
 		render: function render() {
 			var _this = this;
 
-			console.log(this.props, "DA PROPS");
 			for (var i = 0; i > this.props.quiz.answers.length; i++) {
 				console.log(this.props.quiz.answers[i], "DA ANSWERS");
-				// 	results.push([this.props.quiz.answers[i])
 			}
 
 			return _react2.default.createElement(
-				'form',
+				'div',
 				null,
 				_react2.default.createElement(
-					'div',
-					{ className: 'radio' },
+					'form',
+					{ onSubmit: this.handleFormSubmit },
 					_react2.default.createElement(
-						'label',
-						null,
-						_react2.default.createElement('input', { ref: function ref(input) {
-								return _this.option1 = input;
-							}, type: 'radio', value: 'option1',
-							checked: this.state.selectedOption === 'option1',
-							onChange: this.handleOptionChange }),
-						this.props.quiz.answers[0]
+						'div',
+						{ className: 'radio' },
+						_react2.default.createElement(
+							'label',
+							null,
+							_react2.default.createElement('input', { ref: function ref(input) {
+									return _this.option1 = input;
+								}, type: 'radio', value: 'option1',
+								checked: this.state.selectedOption === 'option1',
+								onChange: this.handleOptionChange }),
+							this.props.quiz.answers[0]
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'radio' },
+						_react2.default.createElement(
+							'label',
+							null,
+							_react2.default.createElement('input', { ref: function ref(input) {
+									return _this.option2 = input;
+								}, type: 'radio', value: 'option2',
+								checked: this.state.selectedOption === 'option2',
+								onChange: this.handleOptionChange }),
+							this.props.quiz.answers[1]
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'radio' },
+						_react2.default.createElement(
+							'label',
+							null,
+							_react2.default.createElement('input', { ref: function ref(input) {
+									return _this.option3 = input;
+								}, type: 'radio', value: 'option3',
+								checked: this.state.selectedOption === 'option3',
+								onChange: this.handleOptionChange }),
+							this.props.quiz.answers[2]
+						)
 					)
 				),
 				_react2.default.createElement(
-					'div',
-					{ className: 'radio' },
-					_react2.default.createElement(
-						'label',
-						null,
-						_react2.default.createElement('input', { ref: function ref(input) {
-								return _this.option2 = input;
-							}, type: 'radio', value: 'option2',
-							checked: this.state.selectedOption === 'option2',
-							onChange: this.handleOptionChange }),
-						this.props.quiz.answers[1]
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'radio' },
-					_react2.default.createElement(
-						'label',
-						null,
-						_react2.default.createElement('input', { ref: function ref(input) {
-								return _this.option3 = input;
-							}, type: 'radio', value: 'option3',
-							checked: this.state.selectedOption === 'option3',
-							onChange: this.handleOptionChange }),
-						this.props.quiz.answers[2]
-					)
+					'button',
+					{ className: 'btn btn-default', type: 'submit' },
+					'Results'
 				)
 			);
 		}
