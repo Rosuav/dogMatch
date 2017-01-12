@@ -7,7 +7,7 @@ const QuestionPreview = (quiz) => (
 			{quiz.questions}
 		</div>
 		<div className="answers">
-			<Answers />{/*quiz.answers*/}
+			<Answers quiz={quiz} />
 		</div>
 	</div>
 );

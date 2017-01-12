@@ -21693,7 +21693,7 @@
 			_react2.default.createElement(
 				'div',
 				{ className: 'answers' },
-				_react2.default.createElement(_Answers2.default, null)
+				_react2.default.createElement(_Answers2.default, { quiz: quiz })
 			)
 		);
 	};
@@ -21732,21 +21732,37 @@
 			formSubmitEvent.preventDefault();
 
 			console.log('You have selected : ', this.state.selectedOption);
+			var results = {
+				question1: this.question1.value,
+				question2: this.question2.value,
+				question3: this.question3.value
+			};
+			console.log(results);
 		},
 		render: function render() {
+			var _this = this;
+
+			console.log(this.props, "DA PROPS");
+			for (var i = 0; i > this.props.quiz.answers.length; i++) {
+				console.log(this.props.quiz.answers[i], "DA ANSWERS");
+				// 	results.push([this.props.quiz.answers[i])
+			}
+
 			return _react2.default.createElement(
 				'form',
-				{ onSubmit: this.handleFormSubmit },
+				null,
 				_react2.default.createElement(
 					'div',
 					{ className: 'radio' },
 					_react2.default.createElement(
 						'label',
 						null,
-						_react2.default.createElement('input', { type: 'radio', value: 'option1',
+						_react2.default.createElement('input', { ref: function ref(input) {
+								return _this.question1 = input;
+							}, type: 'radio', value: 'option1',
 							checked: this.state.selectedOption === 'option1',
 							onChange: this.handleOptionChange }),
-						'Option 1'
+						this.props.quiz.answers[0]
 					)
 				),
 				_react2.default.createElement(
@@ -21755,10 +21771,12 @@
 					_react2.default.createElement(
 						'label',
 						null,
-						_react2.default.createElement('input', { type: 'radio', value: 'option2',
-							checked: this.state.selectedOption === 'option1',
+						_react2.default.createElement('input', { ref: function ref(input) {
+								return _this.question1 = input;
+							}, type: 'radio', value: 'option2',
+							checked: this.state.selectedOption === 'option2',
 							onChange: this.handleOptionChange }),
-						'Option 2'
+						this.props.quiz.answers[1]
 					)
 				),
 				_react2.default.createElement(
@@ -21767,16 +21785,13 @@
 					_react2.default.createElement(
 						'label',
 						null,
-						_react2.default.createElement('input', { type: 'radio', value: 'option3',
-							checked: this.state.selectedOption === 'option1',
+						_react2.default.createElement('input', { ref: function ref(input) {
+								return _this.question1 = input;
+							}, type: 'radio', value: 'option3',
+							checked: this.state.selectedOption === 'option3',
 							onChange: this.handleOptionChange }),
-						'Option 3'
+						this.props.quiz.answers[2]
 					)
-				),
-				_react2.default.createElement(
-					'button',
-					{ className: 'btn btn-default', type: 'submit' },
-					'Results'
 				)
 			);
 		}
